@@ -8,7 +8,14 @@ const AppMain = () => {
         <h2>Welcome to IronTravel!</h2>
       </header>
       <Carousel />
-      <ClassComponentSection sectionTitle='I am the class component section' />
+      <div className='flex-row'>
+        <ClassComponentSection sectionTitle='I am a class component' />
+        <ClassComponentSection sectionTitle='So am I' />
+        <ClassComponentSection
+          sectionTitle="I'm Spartacus!"
+          subtitle='And so is he'
+        />
+      </div>
     </main>
   )
 }
