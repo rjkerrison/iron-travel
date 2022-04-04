@@ -1,7 +1,14 @@
 import './CarouselItem.css'
 
-const CarouselItem = ({ text }) => {
-  return <div className='CarouselItem'>{text}</div>
+const CarouselItem = ({ text, backgroundImageUrl }) => {
+  return (
+    <div
+      className='CarouselItem'
+      style={{ backgroundImage: `url(${backgroundImageUrl})` }}
+    >
+      {text}
+    </div>
+  )
 }
 
 export default CarouselItem

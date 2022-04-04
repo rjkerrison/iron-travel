@@ -9,3 +9,8 @@ header.App-header {
   color: white;
   padding: 1rem;
 }
+
+header.App-header > * {
+  margin: 0;
+  padding: 0;
+}

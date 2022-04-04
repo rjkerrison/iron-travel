@@ -4,7 +4,14 @@
   justify-content: center;
   align-items: center;
   font-size: 6rem;
-  min-height: 10vh;
   flex-shrink: 0;
   flex-grow: 0;
+
+  background-position: center;
+  background-size: cover;
+
+  color: white;
+  text-shadow: 0.05em 0.05em 0.05em black;
+
+  scroll-snap-align: center;
 }

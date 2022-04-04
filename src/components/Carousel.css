@@ -1,4 +1,7 @@
 .Carousel {
   display: flex;
   overflow-x: scroll;
+  min-height: 40vmin;
+
+  scroll-snap-type: x mandatory;
 }
