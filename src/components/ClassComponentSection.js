@@ -2,17 +2,17 @@ import React, { Component } from 'react'
 
 class ClassComponentSection extends Component {
   constructor(props) {
-    super({
-      ...props,
-      subtitle: 'HELLO',
-    })
+    super(props)
+    this.state = {
+      subtitle: 'Hello',
+    }
   }
 
   render() {
     return (
       <section>
         <h2>{this.props.sectionTitle}</h2>
-        <p>{this.props.subtitle}</p>
+        <p>{this.state.subtitle}</p>
       </section>
     )
   }
