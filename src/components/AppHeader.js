@@ -1,20 +1,16 @@
-import logo from './logo.svg'
+import logo from '../logo.svg'
+import './AppHeader.css'
 
-const AppHeader = () => {
+const AppHeader = (props) => {
   return (
-    <header className='App-header'>
-      <img src={logo} className='App-logo' alt='logo' />
-      <p>
-        I have edited <code>src/App.js</code> and I saved to reload.
-      </p>
-      <a
-        className='App-link'
-        href='https://reactjs.org'
-        target='_blank'
-        rel='noopener noreferrer'
-      >
-        Learn React
-      </a>
+    <header className={`App-header`}>
+      <h1>{props.appName}</h1>
+      <p>{props.appDescription}</p>
+      <nav>
+        <a className='App-link' href='/'>
+          Homepage
+        </a>
+      </nav>
     </header>
   )
 }
