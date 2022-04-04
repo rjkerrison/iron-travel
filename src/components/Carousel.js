@@ -28,7 +28,11 @@ const Carousel = () => {
   return (
     <section className='Carousel'>
       {messages.map(({ heading, imageUrl }) => (
-        <CarouselItem text={heading} backgroundImageUrl={imageUrl} />
+        <CarouselItem
+          heading={heading}
+          backgroundImageUrl={imageUrl}
+          description='Lorem ipsum dolore sit amet'
+        />
       ))}
     </section>
   )
