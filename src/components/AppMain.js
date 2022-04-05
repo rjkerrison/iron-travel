@@ -2,6 +2,8 @@ import ClassComponentSection from './ClassComponentSection'
 import Carousel from './Carousel'
 import { useState } from 'react'
 import Counter from './Counter'
+import BasicList from './BasicList'
+import ComplexList from './ComplexList'
 
 const AppMain = () => {
   const [favs, setFavs] = useState(['London'])
@@ -29,11 +31,17 @@ const AppMain = () => {
         <Counter />
         <section>
           {favs.map((fav) => (
-            <h2>{fav}</h2>
+            <h2 key={fav}>{fav}</h2>
           ))}
         </section>
       </div>
       <div className='flex-row'>
+        <section>
+          <ComplexList />
+        </section>
+        <section>
+          <BasicList />
+        </section>
         <ClassComponentSection sectionTitle='I am a class component' />
         <ClassComponentSection sectionTitle='So am I' />
       </div>
