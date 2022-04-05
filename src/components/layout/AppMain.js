@@ -1,11 +1,11 @@
-import ClassComponentSection from './ClassComponentSection'
-import Carousel from './Carousel'
 import { useState } from 'react'
-import Counter from './Counter'
-import BasicList from './BasicList'
-import ComplexList from './ComplexList'
-import FavouritesSection from './FavouritesSection'
-import FavouritesPlaceholderSection from './FavouritesPlaceholderSection'
+import ClassComponentSection from '../ClassComponentSection'
+import Carousel from '../carousel/Carousel'
+import Counter from '../Counter'
+import BasicList from '../BasicList'
+import ComplexList from '../ComplexList'
+import FavouritesSection from '../favourites/FavouritesSection'
+import FavouritesPlaceholderSection from '../favourites/FavouritesPlaceholderSection'
 
 const AppMain = () => {
   const [favs, setFavs] = useState([])

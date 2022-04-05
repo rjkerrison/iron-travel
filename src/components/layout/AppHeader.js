@@ -1,4 +1,3 @@
-import logo from '../logo.svg'
 import './AppHeader.css'
 
 const AppHeader = (props) => {
