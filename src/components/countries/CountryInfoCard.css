@@ -1,0 +1,42 @@
+.CountryInfoCard {
+    flex: 30rem 0 1;
+    margin: 0;
+    border-radius: 2rem;    padding: 1rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem -0.25rem rgba(0, 0, 0, 0.5);
+    background: hsl(240, 88%, 65%);
+    color: white;
+    font-size: 1.5rem;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+.CountryInfoCard header {
+    display: flex;
+    padding: 1rem;
+    justify-content: stretch;
+    align-items: center;
+    background-color: black;
+    height: 6rem;
+}
+
+.CountryInfoCard header > picture {
+    display: block;
+    width: 10rem;
+    flex-grow: 0;
+}
+.CountryInfoCard header > div {
+    display: block;
+    flex: 100% 1 0;
+}
+
+.CountryInfoCard header p,
+.CountryInfoCard header h3 {
+    margin: 0;
+}
+
+.CountryInfoCard picture img {
+    display: block;
+    width: 100%;
+    height: auto;
+}

@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import ClassComponentSection from '../ClassComponentSection'
 import Carousel from '../carousel/Carousel'
 import Counter from '../Counter'
 import BasicList from '../BasicList'
 import ComplexList from '../ComplexList'
 import FavouritesSection from '../favourites/FavouritesSection'
 import FavouritesPlaceholderSection from '../favourites/FavouritesPlaceholderSection'
+import CountryList from '../countries/CountryList'
 
 const AppMain = () => {
   const [favs, setFavs] = useState([])
@@ -39,15 +39,11 @@ const AppMain = () => {
         )}
       </div>
       <div className='flex-row'>
-        <section>
-          <ComplexList />
-        </section>
-        <section>
-          <BasicList />
-        </section>
-        <ClassComponentSection sectionTitle='I am a class component' />
-        <ClassComponentSection sectionTitle='So am I' />
+        <ComplexList />
+        <BasicList />
       </div>
+
+      <CountryList />
     </main>
   )
 }
