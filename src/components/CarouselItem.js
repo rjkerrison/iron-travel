@@ -2,18 +2,17 @@ import './CarouselItem.css'
 
 import { useState } from 'react'
 
-const CarouselItem = ({ heading, description, backgroundImageUrl }) => {
+const CarouselItem = ({
+  heading,
+  description,
+  backgroundImageUrl,
+  toggleFav,
+}) => {
   // we use useState inside a component
   // to create stateful data which we can change
   // with the setter, and so React will rerender this component
-  const [data, setData] = useState('is not favourited :(')
-
   const setFavouriteCity = () => {
-    if (data === 'is favourited!!!') {
-      setData('YOU ALREADY CLICKED')
-    } else {
-      setData('is favourited!!!')
-    }
+    toggleFav(heading)
   }
 
   return (
@@ -21,9 +20,7 @@ const CarouselItem = ({ heading, description, backgroundImageUrl }) => {
       className='CarouselItem'
       style={{ backgroundImage: `url(${backgroundImageUrl})` }}
     >
-      <h3>
-        {heading} {data}
-      </h3>
+      <h3>{heading}</h3>
       <p>{description}</p>
       <button className='favourite' onClick={setFavouriteCity}>
         ⭐️
