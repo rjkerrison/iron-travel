@@ -7,7 +7,12 @@ const CountryList = () => {
     return <CountryInfoCard {...country} />
   })
 
-  return <section className='CountryList'>{countryInfoCards}</section>
+  return (
+    <section className='CountryListSection'>
+      <h2>All the Countries</h2>
+      <div className='CountryList'>{countryInfoCards}</div>
+    </section>
+  )
 }
 
 export default CountryList
