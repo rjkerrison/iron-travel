@@ -4,9 +4,11 @@ import { useState } from 'react'
 import Counter from './Counter'
 import BasicList from './BasicList'
 import ComplexList from './ComplexList'
+import FavouritesSection from './FavouritesSection'
+import FavouritesPlaceholderSection from './FavouritesPlaceholderSection'
 
 const AppMain = () => {
-  const [favs, setFavs] = useState(['London'])
+  const [favs, setFavs] = useState([])
 
   const toggleFromList = (value) => {
     // remember that favs is IMMUTABLE
@@ -29,11 +31,12 @@ const AppMain = () => {
       <Carousel toggleFav={toggleFromList} favs={favs} />
       <div className='flex-row'>
         <Counter />
-        <section>
-          {favs.map((fav) => (
-            <h2 key={fav}>{fav}</h2>
-          ))}
-        </section>
+        {/* Conditional rendering */}
+        {favs.length > 0 ? (
+          <FavouritesSection favs={favs} />
+        ) : (
+          <FavouritesPlaceholderSection />
+        )}
       </div>
       <div className='flex-row'>
         <section>
