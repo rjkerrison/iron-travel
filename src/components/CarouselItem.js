@@ -1,7 +1,5 @@
 import './CarouselItem.css'
 
-import { useState } from 'react'
-
 const CarouselItem = ({
   heading,
   description,

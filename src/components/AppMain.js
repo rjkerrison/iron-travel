@@ -1,6 +1,7 @@
 import ClassComponentSection from './ClassComponentSection'
 import Carousel from './Carousel'
 import { useState } from 'react'
+import Counter from './Counter'
 
 const AppMain = () => {
   const [favs, setFavs] = useState(['London'])
@@ -25,13 +26,16 @@ const AppMain = () => {
       </header>
       <Carousel toggleFav={toggleFromList} />
       <div className='flex-row'>
-        <ClassComponentSection sectionTitle='I am a class component' />
-        <ClassComponentSection sectionTitle='So am I' />
-        <div>
+        <Counter />
+        <section>
           {favs.map((fav) => (
             <h2>{fav}</h2>
           ))}
-        </div>
+        </section>
+      </div>
+      <div className='flex-row'>
+        <ClassComponentSection sectionTitle='I am a class component' />
+        <ClassComponentSection sectionTitle='So am I' />
       </div>
     </main>
   )
