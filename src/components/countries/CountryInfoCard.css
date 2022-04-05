@@ -1,5 +1,5 @@
 .CountryInfoCard {
-    flex: 30rem 0 1;
+    flex: 32rem 0 1;
     margin: 0;
     border-radius: 2rem;
     padding: 1rem;
@@ -10,28 +10,29 @@
     padding: 0;
 }
 
-.CountryInfoCard header {
+.CountryInfoCard header.CountryInfoHeader {
     display: flex;
     padding: 1rem;
     justify-content: stretch;
     align-items: center;
     background-color: black;
-    height: 6rem;
+    height: 8rem;
     border-radius: 2rem 2rem 0 0;
+    font-size: 1.25rem;
 }
 
-.CountryInfoCard header > picture {
+.CountryInfoCard header.CountryInfoHeader > picture {
     display: block;
-    width: 10rem;
+    width: 12rem;
     flex-grow: 0;
 }
-.CountryInfoCard header > div {
+.CountryInfoCard header.CountryInfoHeader > div {
     display: block;
     flex: 100% 1 0;
 }
 
-.CountryInfoCard header p,
-.CountryInfoCard header h3 {
+.CountryInfoCard header.CountryInfoHeader p,
+.CountryInfoCard header.CountryInfoHeader h3 {
     margin: 0;
 }
 

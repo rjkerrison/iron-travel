@@ -10,6 +10,7 @@ const CountryDescription = ({
   borders,
   languages,
   population,
+  ...otherInfo
 }) => {
   const currencyString = currencies
     ? Object.values(currencies)
@@ -24,6 +25,8 @@ const CountryDescription = ({
     : `any random place, because ${name.official} does not have a capital`
 
   const demonym = demonyms?.eng?.m || 'anomaly'
+
+  console.log('the following information was not used', otherInfo)
 
   return (
     <div className='country-description'>
