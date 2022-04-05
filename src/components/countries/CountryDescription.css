@@ -1,0 +1,15 @@
+.country-description {
+    padding: 1rem;
+    text-align: justify;
+}
+
+
+.country-description p {
+    margin: 1rem 0;
+}
+.country-description p:nth-of-type(even) {
+    margin-left: 5rem;
+}
+.country-description p:nth-of-type(odd) {
+    margin-right: 5rem;
+}
