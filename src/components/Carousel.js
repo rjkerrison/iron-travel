@@ -1,7 +1,7 @@
 import CarouselItem from './CarouselItem'
 import './Carousel.css'
 
-const Carousel = ({ toggleFav }) => {
+const Carousel = ({ toggleFav, favs }) => {
   const messages = [
     {
       id: 'bcn',
@@ -38,6 +38,7 @@ const Carousel = ({ toggleFav }) => {
           backgroundImageUrl={imageUrl}
           description='Lorem ipsum dolore sit amet'
           toggleFav={toggleFav}
+          favs={favs}
         />
       ))}
     </section>

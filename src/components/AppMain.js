@@ -26,7 +26,7 @@ const AppMain = () => {
       <header>
         <h2>Welcome to IronTravel!</h2>
       </header>
-      <Carousel toggleFav={toggleFromList} />
+      <Carousel toggleFav={toggleFromList} favs={favs} />
       <div className='flex-row'>
         <Counter />
         <section>

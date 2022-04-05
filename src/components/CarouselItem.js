@@ -5,6 +5,7 @@ const CarouselItem = ({
   description,
   backgroundImageUrl,
   toggleFav,
+  favs,
 }) => {
   // we use useState inside a component
   // to create stateful data which we can change
@@ -12,6 +13,9 @@ const CarouselItem = ({
   const setFavouriteCity = () => {
     toggleFav(heading)
   }
+  const isFavourited = favs.includes(heading)
+
+  const className = isFavourited ? 'favourite active' : 'favourite'
 
   return (
     <div
@@ -20,8 +24,8 @@ const CarouselItem = ({
     >
       <h3>{heading}</h3>
       <p>{description}</p>
-      <button className='favourite' onClick={setFavouriteCity}>
-        ⭐️
+      <button className={className} onClick={setFavouriteCity}>
+        {isFavourited ? '⭐️' : '🤔'}
       </button>
     </div>
   )

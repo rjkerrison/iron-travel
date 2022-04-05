@@ -28,11 +28,15 @@
   top: 1rem;
   right: 1rem;
   font-size: 5rem;
-  background:none;
+  background: red;
   border: none;
   transition: transform 1s;
   transform: none;
   animation: light-bounce 2s infinite ease-in-out;
+}
+
+.CarouselItem button.favourite.active {
+  background: green;
 }
 
 @keyframes light-bounce {
