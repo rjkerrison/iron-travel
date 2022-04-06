@@ -3,7 +3,7 @@ import CountryDescription from './CountryDescription'
 import CountryInfoHeader from './CountryInfoHeader'
 import { useState } from 'react'
 import CountryCardCommentForm from './CountryCardCommentForm'
-import Comment from './Comment'
+import CommentList from './CommentList'
 
 const CountryInfoCard = ({
   increaseVisitedCount,
@@ -57,17 +57,8 @@ const CountryInfoCard = ({
         increaseVisitedCount={increaseVisitedCount}
         decreaseVisitedCount={decreaseVisitedCount}
       />
-      <ul>
-        {comments.map((comment) => (
-          <li key={comment._id}>
-            <Comment
-              {...comment}
-              updateComment={(value) => updateComment(comment._id, value)}
-            />
-          </li>
-        ))}
-      </ul>
 
+      <CommentList comments={comments} updateComment={updateComment} />
       <CountryCardCommentForm
         cca3={countryProps.cca3}
         handleChange={handleChange}

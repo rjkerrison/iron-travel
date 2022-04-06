@@ -1,50 +1,54 @@
 .CountryListSection {
-    background-image: url('https://images.unsplash.com/photo-1541410965313-d53b3c16ef17?w=2180');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    padding: 4rem;
+  background-image: url('https://images.unsplash.com/photo-1541410965313-d53b3c16ef17?w=2180');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 4rem;
 }
 
 .CountryList {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: wrap;
-    padding: auto;
-    column-gap: 2rem;
-    row-gap: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding: auto;
+  column-gap: 2rem;
+  row-gap: 2rem;
 }
 
-.CountryListSection input[type="checkbox"] {
-    position: absolute;
-    left: -100vw;
+.CountryListSection input[type='checkbox'] {
+  position: absolute;
+  left: -100vw;
 }
 
-.CountryListSection input + label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: max-content;
-    border-radius: 2rem;
-    height: 4rem;
-    padding: 1rem;
-    line-height: 1;
-    font-size: 2rem;
-    background: white;
-    border: 2px solid blue;
-    color: blue;
-    transition: 1s all;
+.CountryListSection input[type='checkbox'] + label,
+.CountryListSection button,
+.CountryListSection input[type='submit'] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  border-radius: 2rem;
+  height: 4rem;
+  padding: 1rem;
+  line-height: 1;
+  font-size: 2rem;
+  background: white;
+  border: 2px solid blue;
+  color: blue;
+  transition: 1s all;
 }
 
-.CountryListSection input:checked + label {
-    border: 2px solid white;
-    color: white;
-    background: blue;
+.CountryListSection input[type='checkbox']:checked + label,
+.CountryListSection button.active,
+.CountryListSection input[type='submit'] {
+  border: 2px solid white;
+  color: white;
+  background: blue;
 }
 
 .filter-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

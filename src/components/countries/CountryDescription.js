@@ -68,7 +68,7 @@ const CountryDescription = ({
         during your visit.
       </p>
       <p>There are {population} people living there.</p>
-      <button onClick={toggleVisited}>
+      <button onClick={toggleVisited} className={isVisited && 'active'}>
         {isVisited ? 'Visited (click to unvisit)' : 'Mark as visited'}
       </button>
     </div>
