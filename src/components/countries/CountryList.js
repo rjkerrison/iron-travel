@@ -2,9 +2,15 @@ import countries from '../../assets/countries.json'
 import CountryInfoCard from './CountryInfoCard'
 import './CountryList.css'
 
-const CountryList = () => {
+const CountryList = ({ increaseVisitedCount, decreaseVisitedCount }) => {
   const countryInfoCards = countries.map((country) => {
-    return <CountryInfoCard {...country} />
+    return (
+      <CountryInfoCard
+        {...country}
+        increaseVisitedCount={increaseVisitedCount}
+        decreaseVisitedCount={decreaseVisitedCount}
+      />
+    )
   })
 
   return (

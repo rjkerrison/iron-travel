@@ -6,9 +6,18 @@ import ComplexList from '../ComplexList'
 import FavouritesSection from '../favourites/FavouritesSection'
 import FavouritesPlaceholderSection from '../favourites/FavouritesPlaceholderSection'
 import CountryList from '../countries/CountryList'
+import VisitedSummary from '../countries/VisitedSummary'
 
 const AppMain = () => {
   const [favs, setFavs] = useState([])
+  const [visitedCount, setVisitedCount] = useState(0)
+
+  const decreaseVisitedCount = () => {
+    setVisitedCount(visitedCount - 1)
+  }
+  const increaseVisitedCount = () => {
+    setVisitedCount(visitedCount + 1)
+  }
 
   const toggleFromList = (value) => {
     // remember that favs is IMMUTABLE
@@ -43,7 +52,11 @@ const AppMain = () => {
         <BasicList />
       </div>
 
-      <CountryList />
+      <VisitedSummary visitedCount={visitedCount} />
+      <CountryList
+        increaseVisitedCount={increaseVisitedCount}
+        decreaseVisitedCount={decreaseVisitedCount}
+      />
     </main>
   )
 }
