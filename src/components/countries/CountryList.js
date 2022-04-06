@@ -69,8 +69,7 @@ const CountryList = ({
   return (
     <section className='CountryListSection'>
       <h2>All the Countries</h2>
-      <form>
-        <p>Filters:</p>
+      <form className='CountryListFilters'>
         <div className='filter-group'>
           <input
             type='checkbox'
