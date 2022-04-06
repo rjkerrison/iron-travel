@@ -48,10 +48,6 @@ const AppMain = () => {
           <FavouritesPlaceholderSection />
         )}
       </div>
-      <div className='flex-row'>
-        <ComplexList />
-        <BasicList />
-      </div>
 
       <VisitedSummary
         visitedCount={visitedCount}
@@ -62,6 +58,11 @@ const AppMain = () => {
         decreaseVisitedCount={decreaseVisitedCount}
         setTotalCountryCount={setTotalCountryCount}
       />
+
+      <div className='flex-row'>
+        <ComplexList />
+        <BasicList />
+      </div>
     </main>
   )
 }
