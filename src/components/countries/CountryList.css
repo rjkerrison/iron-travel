@@ -4,7 +4,6 @@
   background-size: cover;
   background-position: center;
   padding: 4rem;
-  position: relative;
 }
 
 .CountryList {
@@ -52,9 +51,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.CountryListFilters {
-  position: sticky;
-  top: 0;
 }
