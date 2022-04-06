@@ -26,7 +26,7 @@ const CountryDescription = ({
 
   const demonym = demonyms?.eng?.m || 'anomaly'
 
-  console.log('the following information was not used', otherInfo)
+  // console.log('the following information was not used', otherInfo)
 
   return (
     <div className='country-description'>
