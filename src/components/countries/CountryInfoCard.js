@@ -3,6 +3,7 @@ import CountryDescription from './CountryDescription'
 import CountryInfoHeader from './CountryInfoHeader'
 import { useState } from 'react'
 import CountryCardCommentForm from './CountryCardCommentForm'
+import Comment from './Comment'
 
 const CountryInfoCard = ({
   increaseVisitedCount,
@@ -19,7 +20,7 @@ const CountryInfoCard = ({
   const handleSubmitComment = (event) => {
     // do not navigate the browser on form submit
     event.preventDefault()
-    setComments([...comments, formData])
+    setComments([...comments, { ...formData, _id: 'comment' + Math.random() }])
     setFormData({
       author: 'default',
       comment: '',
@@ -37,6 +38,17 @@ const CountryInfoCard = ({
     setFormData(newFormData)
   }
 
+  const updateComment = (id, value) => {
+    const index = comments.findIndex(({ _id }) => _id === id)
+    if (index !== -1) {
+      setComments([
+        ...comments.slice(0, index),
+        value,
+        ...comments.slice(index + 1),
+      ])
+    }
+  }
+
   return (
     <article className='CountryInfoCard' id={countryProps.cca3}>
       <CountryInfoHeader {...countryProps} />
@@ -46,9 +58,12 @@ const CountryInfoCard = ({
         decreaseVisitedCount={decreaseVisitedCount}
       />
       <ul>
-        {comments.map(({ comment, author }) => (
-          <li>
-            {comment} – {author}
+        {comments.map((comment) => (
+          <li key={comment._id}>
+            <Comment
+              {...comment}
+              updateComment={(value) => updateComment(comment._id, value)}
+            />
           </li>
         ))}
       </ul>
