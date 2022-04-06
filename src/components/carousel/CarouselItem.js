@@ -2,8 +2,9 @@ import './CarouselItem.css'
 
 const CarouselItem = ({
   heading,
-  description,
-  backgroundImageUrl,
+  destination,
+  description = "I bet it's nice there!",
+  imageUrl,
   toggleFav,
   favs,
 }) => {
@@ -11,7 +12,7 @@ const CarouselItem = ({
   // to create stateful data which we can change
   // with the setter, and so React will rerender this component
   const setFavouriteCity = () => {
-    toggleFav(heading)
+    toggleFav(destination)
   }
   const isFavourited = favs.includes(heading)
 
@@ -20,7 +21,7 @@ const CarouselItem = ({
   return (
     <div
       className='CarouselItem'
-      style={{ backgroundImage: `url(${backgroundImageUrl})` }}
+      style={{ backgroundImage: `url(${imageUrl})` }}
     >
       <h3>{heading}</h3>
       <p>{description}</p>

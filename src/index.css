@@ -21,8 +21,9 @@ code {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  padding: 1rem;
 }
 
-.flex-row  > * {
+.flex-row > * {
   flex: 1 1 50%;
 }
