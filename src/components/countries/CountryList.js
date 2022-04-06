@@ -5,6 +5,8 @@ import './CountryList.css'
 
 const CountryList = () => {
   const [selectedCountries, setSelectedCountries] = useState(countries)
+  // control all the state for the form ourselves in React
+  // so that React can use this data, and update the form as necessary
   const [formData, setFormData] = useState({
     europe: false,
     southAmerica: false,
@@ -37,12 +39,15 @@ const CountryList = () => {
   const handleCheck = (e) => {
     const name = e.target.name
 
-    const nfd = {
+    const newFormData = {
       ...formData,
+      // to override, we have to declare after the spreaded formData
+      // set the key as the value of name (not 'name')
       [name]: !formData[name],
     }
-    console.log(nfd)
-    setFormData(nfd)
+
+    console.log(newFormData)
+    setFormData(newFormData)
   }
 
   return (
