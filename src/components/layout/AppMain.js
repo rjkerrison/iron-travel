@@ -11,6 +11,7 @@ import VisitedSummary from '../countries/VisitedSummary'
 const AppMain = () => {
   const [favs, setFavs] = useState([])
   const [visitedCount, setVisitedCount] = useState(0)
+  const [totalCountryCount, setTotalCountryCount] = useState(0)
 
   const decreaseVisitedCount = () => {
     setVisitedCount(visitedCount - 1)
@@ -52,10 +53,14 @@ const AppMain = () => {
         <BasicList />
       </div>
 
-      <VisitedSummary visitedCount={visitedCount} />
+      <VisitedSummary
+        visitedCount={visitedCount}
+        totalCountryCount={totalCountryCount}
+      />
       <CountryList
         increaseVisitedCount={increaseVisitedCount}
         decreaseVisitedCount={decreaseVisitedCount}
+        setTotalCountryCount={setTotalCountryCount}
       />
     </main>
   )

@@ -1,10 +1,10 @@
 import React from 'react'
 import './VisitedSummary.css'
 
-const VisitedSummary = ({ visitedCount }) => {
+const VisitedSummary = ({ visitedCount, totalCountryCount }) => {
   return (
     <p className='VisitedSummary'>
-      You have been to {visitedCount} countries out of total
+      You have been to {visitedCount} countries out of {totalCountryCount}
     </p>
   )
 }

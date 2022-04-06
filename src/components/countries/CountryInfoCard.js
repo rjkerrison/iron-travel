@@ -9,7 +9,7 @@ const CountryInfoCard = ({
   ...countryProps
 }) => {
   return (
-    <article class='CountryInfoCard' id={countryProps.cca3}>
+    <article className='CountryInfoCard' id={countryProps.cca3}>
       <CountryInfoHeader {...countryProps} />
       <CountryDescription
         {...countryProps}
