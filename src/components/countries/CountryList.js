@@ -3,7 +3,11 @@ import countries from '../../assets/countries.json'
 import CountryInfoCard from './CountryInfoCard'
 import './CountryList.css'
 
-const CountryList = () => {
+const CountryList = ({
+  increaseVisitedCount,
+  decreaseVisitedCount,
+  setTotalCountryCount,
+}) => {
   const [selectedCountries, setSelectedCountries] = useState(countries)
   // control all the state for the form ourselves in React
   // so that React can use this data, and update the form as necessary
@@ -17,7 +21,14 @@ const CountryList = () => {
   })
 
   const countryInfoCards = selectedCountries.map((country) => {
-    return <CountryInfoCard {...country} />
+    return (
+      <CountryInfoCard
+        key={country.cca3}
+        {...country}
+        increaseVisitedCount={increaseVisitedCount}
+        decreaseVisitedCount={decreaseVisitedCount}
+      />
+    )
   })
 
   const updateFilters = () => {
@@ -49,6 +60,11 @@ const CountryList = () => {
     console.log(newFormData)
     setFormData(newFormData)
   }
+
+  // We CANNOT call a state setter in the main body of a rendering like this
+  useEffect(() => {
+    setTotalCountryCount(countries.length)
+  }, [setTotalCountryCount])
 
   return (
     <section className='CountryListSection'>

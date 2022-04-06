@@ -4,7 +4,12 @@ import CountryInfoHeader from './CountryInfoHeader'
 import { useState } from 'react'
 import CountryCardCommentForm from './CountryCardCommentForm'
 
-const CountryInfoCard = (countryProps) => {
+const CountryInfoCard = ({
+  increaseVisitedCount,
+  decreaseVisitedCount,
+  // rest syntax (...) gathers all the unnamed properties
+  ...countryProps
+}) => {
   const [formData, setFormData] = useState({
     author: 'default',
     comment: '',
@@ -33,9 +38,13 @@ const CountryInfoCard = (countryProps) => {
   }
 
   return (
-    <article class='CountryInfoCard' id={countryProps.cca3}>
+    <article className='CountryInfoCard' id={countryProps.cca3}>
       <CountryInfoHeader {...countryProps} />
-      <CountryDescription {...countryProps} />
+      <CountryDescription
+        {...countryProps}
+        increaseVisitedCount={increaseVisitedCount}
+        decreaseVisitedCount={decreaseVisitedCount}
+      />
       <ul>
         {comments.map(({ comment, author }) => (
           <li>

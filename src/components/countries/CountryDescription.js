@@ -1,6 +1,9 @@
-import React from 'react'
+import './CountryDescription.css'
+import React, { useState } from 'react'
 
 const CountryDescription = ({
+  increaseVisitedCount,
+  decreaseVisitedCount,
   name,
   independent,
   currencies,
@@ -12,6 +15,18 @@ const CountryDescription = ({
   population,
   ...otherInfo
 }) => {
+  const [isVisited, setIsVisited] = useState(false)
+
+  const toggleVisited = () => {
+    if (isVisited) {
+      setIsVisited(false)
+      decreaseVisitedCount()
+    } else {
+      setIsVisited(true)
+      increaseVisitedCount()
+    }
+  }
+
   const currencyString = currencies
     ? Object.values(currencies)
         .map((x) => x.name)
@@ -53,6 +68,9 @@ const CountryDescription = ({
         during your visit.
       </p>
       <p>There are {population} people living there.</p>
+      <button onClick={toggleVisited}>
+        {isVisited ? 'Visited (click to unvisit)' : 'Mark as visited'}
+      </button>
     </div>
   )
 }
