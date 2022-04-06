@@ -1,8 +1,13 @@
 import React from 'react'
 
-const CountryCardCommentForm = ({ cca3, formData, handleChange }) => {
+const CountryCardCommentForm = ({
+  cca3,
+  formData,
+  handleChange,
+  handleSubmit,
+}) => {
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor={`author-${cca3}`}>Posted by</label>
       <input
         type='text'
@@ -22,6 +27,7 @@ const CountryCardCommentForm = ({ cca3, formData, handleChange }) => {
         value={formData.comment}
         onChange={handleChange}
       ></textarea>
+      <input type='submit' value='Save' />
     </form>
   )
 }
