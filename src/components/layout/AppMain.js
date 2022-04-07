@@ -4,7 +4,7 @@ import Countries from '../../pages/Countries'
 import Country from '../../pages/Country'
 import CountryList from '../countries/CountryList'
 import { useEffect, useState } from 'react'
-import axios from 'axios'
+import { getCountriesFromApi } from '../../api/countries'
 
 const AppMain = () => {
   const [visited, setVisited] = useState([])
@@ -12,11 +12,8 @@ const AppMain = () => {
   const [countries, setCountries] = useState([])
 
   useEffect(() => {
-    const fetchCountries = async () => {
-      const { data } = await axios.get('http://localhost:5005/api/countries')
-      setCountries(data)
-    }
-    fetchCountries()
+    // In this case, .then() is a lot shorter than async/await
+    getCountriesFromApi().then(setCountries)
   }, [])
 
   const toggleVisited = (cca3) => {
