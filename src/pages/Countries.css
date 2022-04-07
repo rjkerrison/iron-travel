@@ -8,3 +8,38 @@
 .Country {
   padding: 2rem;
 }
+
+.Country {
+  font-size: 2rem;
+}
+
+.CountriesPage input[type='checkbox'] {
+  position: absolute;
+  left: -100vw;
+}
+
+.CountriesPage input[type='checkbox'] + label,
+.CountriesPage button,
+.CountriesPage input[type='submit'] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  border-radius: 2rem;
+  height: 4rem;
+  padding: 1rem;
+  line-height: 1;
+  font-size: 2rem;
+  background: white;
+  border: 2px solid blue;
+  color: blue;
+  transition: 1s all;
+}
+
+.CountriesPage input[type='checkbox']:checked + label,
+.CountriesPage button.active,
+.CountriesPage input[type='submit'] {
+  border: 2px solid white;
+  color: white;
+  background: blue;
+}
