@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import countries from '../../assets/countries.json'
+import './CountryLink.css'
 
-const CountryLink = ({ cca3 }) => {
-  // find country based on unique identifier
-  const country = countries.find((country) => country.cca3 === cca3)
-
+const CountryLink = ({ cca3, name }) => {
   // render link
-  return <Link to={`/countries/${cca3}`}>{country.name.common}</Link>
+  return (
+    <Link className='CountryLink' to={`/countries/${cca3}`}>
+      {name.common}
+    </Link>
+  )
 }
 
 export default CountryLink

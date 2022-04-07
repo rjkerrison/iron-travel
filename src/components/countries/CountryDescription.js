@@ -1,6 +1,8 @@
 import './CountryDescription.css'
 import React, { useState } from 'react'
 import CountryLink from './CountryLink'
+import CountryLinkList from './CountryLinkList'
+import BordersDescription from './BordersDescription'
 
 const CountryDescription = ({
   increaseVisitedCount,
@@ -62,10 +64,7 @@ const CountryDescription = ({
         If you meet a native of {name.common}, you can call them a
         {/^[aeiou]/i.test(demonym) && 'n'} {demonym}.
       </p>
-      <p>
-        It has borders with{' '}
-        {borders?.map((cca3) => <CountryLink cca3={cca3} />) || 'nothing'}.
-      </p>
+      <BordersDescription borders={borders} />
       <p>
         It would be useful for you to know how to speak{' '}
         {(languages && Object.values(languages)?.join(' or ')) || 'no language'}{' '}

@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Outlet } from 'react-router-dom'
 import countries from '../../assets/countries.json'
-import CountryInfoCard from './CountryInfoCard'
+import CountryInfoHeaderCard from './CountryInfoHeaderCard'
 import './CountryList.css'
 
 const CountryList = ({
@@ -13,17 +12,17 @@ const CountryList = ({
   // control all the state for the form ourselves in React
   // so that React can use this data, and update the form as necessary
   const [formData, setFormData] = useState({
-    europe: false,
+    europe: true,
     southAmerica: false,
     northAmerica: false,
     africa: false,
-    antarctica: true,
+    antarctica: false,
     oceania: false,
   })
 
   const countryInfoCards = selectedCountries.map((country) => {
     return (
-      <CountryInfoCard
+      <CountryInfoHeaderCard
         key={country.cca3}
         {...country}
         increaseVisitedCount={increaseVisitedCount}
@@ -122,10 +121,7 @@ const CountryList = ({
           <label htmlFor='antarctica'>Antarctica</label>
         </div>
       </form>
-      <div className='CountryList'>
-        <Outlet />
-        {countryInfoCards}
-      </div>
+      <div className='CountryList'>{countryInfoCards}</div>
     </section>
   )
 }

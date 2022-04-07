@@ -1,42 +1,42 @@
-.CountryInfoCard {
+.CountryInfoHeaderCard {
   flex: 32rem 0 0;
   margin: 0;
   border-radius: 2rem;
   padding: 1rem;
   box-shadow: 0.5rem 0.5rem 0.5rem -0.25rem rgba(0, 0, 0, 0.5);
-  background: hsl(240, 88%, 65%, 0.5);
+  background: hsl(240, 88%, 65%);
   color: white;
   font-size: 1.5rem;
   padding: 0;
 }
 
-.CountryInfoCard header.CountryInfoHeader {
+.CountryInfoHeaderCard header.CountryInfoHeader {
   display: flex;
   padding: 1rem;
   justify-content: stretch;
   align-items: center;
   background-color: black;
   height: 8rem;
-  border-radius: 2rem 2rem 0 0;
+  border-radius: 2rem;
   font-size: 1.25rem;
 }
 
-.CountryInfoCard header.CountryInfoHeader > picture {
+.CountryInfoHeaderCard header.CountryInfoHeader > picture {
   display: block;
   width: 12rem;
   flex-grow: 0;
 }
-.CountryInfoCard header.CountryInfoHeader > div {
+.CountryInfoHeaderCard header.CountryInfoHeader > div {
   display: block;
   flex: 100% 1 0;
 }
 
-.CountryInfoCard header.CountryInfoHeader p,
-.CountryInfoCard header.CountryInfoHeader h3 {
+.CountryInfoHeaderCard header.CountryInfoHeader p,
+.CountryInfoHeaderCard header.CountryInfoHeader h3 {
   margin: 0;
 }
 
-.CountryInfoCard picture img {
+.CountryInfoHeaderCard picture img {
   display: block;
   width: 100%;
   height: auto;

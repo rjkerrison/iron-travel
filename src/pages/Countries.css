@@ -1,0 +1,10 @@
+.CountriesPage {
+  background-image: url('https://images.unsplash.com/photo-1541410965313-d53b3c16ef17?w=2180');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.Country {
+  padding: 2rem;
+}

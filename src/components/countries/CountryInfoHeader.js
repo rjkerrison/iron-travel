@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 
 const CountryInfoHeader = ({ flags, name, cca3, coatOfArms }) => {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -14,7 +14,11 @@ const CountryInfoHeader = ({ flags, name, cca3, coatOfArms }) => {
         </picture>
       )}
       <div>
-        <h3>{name.common}</h3>
+        <h3>
+          <Link className='CountryLink' to={`/countries/${cca3}`}>
+            {name.common}
+          </Link>
+        </h3>
         <p>{name.official}</p>
         <p>{cca3}</p>
       </div>
