@@ -14,7 +14,7 @@ const CarouselItem = ({
   const setFavouriteCity = () => {
     toggleFav(destination)
   }
-  const isFavourited = favs.includes(heading)
+  const isFavourited = favs.includes(destination)
 
   const className = isFavourited ? 'favourite active' : 'favourite'
 
