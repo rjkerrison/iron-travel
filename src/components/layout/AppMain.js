@@ -3,11 +3,21 @@ import HomePage from '../../pages/HomePage'
 import Countries from '../../pages/Countries'
 import Country from '../../pages/Country'
 import CountryList from '../countries/CountryList'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 const AppMain = () => {
   const [visited, setVisited] = useState([])
   const [totalCountryCount, setTotalCountryCount] = useState(0)
+  const [countries, setCountries] = useState([])
+
+  useEffect(() => {
+    const fetchCountries = async () => {
+      const { data } = await axios.get('http://localhost:5005/api/countries')
+      setCountries(data)
+    }
+    fetchCountries()
+  }, [])
 
   const toggleVisited = (cca3) => {
     const visitedIndex = visited.indexOf(cca3)
@@ -31,8 +41,17 @@ const AppMain = () => {
       toggleVisited={toggleVisited}
       getIsVisited={getIsVisited}
       setTotalCountryCount={setTotalCountryCount}
+      countries={countries}
     />
   )
+
+  if (countries.length === 0) {
+    return (
+      <main>
+        <h2>Loading, please wait…</h2>
+      </main>
+    )
+  }
 
   return (
     <main>
@@ -44,6 +63,7 @@ const AppMain = () => {
             <Countries
               visitedCount={visited.length}
               totalCountryCount={totalCountryCount}
+              countries={countries}
             />
           }
         >
@@ -54,6 +74,7 @@ const AppMain = () => {
               <Country
                 toggleVisited={toggleVisited}
                 getIsVisited={getIsVisited}
+                countries={countries}
               />
             }
           />

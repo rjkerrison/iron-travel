@@ -23,7 +23,7 @@ const CountryInfoHeader = ({ flags, name, cca3, coatOfArms }) => {
         <p>{cca3}</p>
       </div>
       {/* If we have either coat of arms image, we can show it */}
-      {(coatOfArms.svg || coatOfArms.png) && (
+      {coatOfArms && (coatOfArms.svg || coatOfArms.png) && (
         <picture>
           <img src={coatOfArms.svg || coatOfArms.png} alt={name.official} />
         </picture>

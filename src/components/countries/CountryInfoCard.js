@@ -6,6 +6,7 @@ import CountryCardCommentForm from './CountryCardCommentForm'
 import CommentList from './CommentList'
 
 const CountryInfoCard = ({
+  countries,
   getIsVisited,
   toggleVisited,
   // rest syntax (...) gathers all the unnamed properties
@@ -54,6 +55,7 @@ const CountryInfoCard = ({
       <CountryInfoHeader {...countryProps} />
       <CountryDescription
         {...countryProps}
+        countries={countries}
         isVisited={getIsVisited(countryProps.cca3)}
         toggleVisited={toggleVisited}
       />

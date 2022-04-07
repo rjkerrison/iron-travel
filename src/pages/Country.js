@@ -1,9 +1,8 @@
 import React from 'react'
 import CountryInfoCard from '../components/countries/CountryInfoCard'
-import countries from '../assets/countries.json'
 import { Link, useParams } from 'react-router-dom'
 
-const Country = ({ toggleVisited, getIsVisited }) => {
+const Country = ({ toggleVisited, getIsVisited, countries }) => {
   const params = useParams()
 
   const country = countries.find((country) => country.cca3 === params.cca3)
@@ -19,6 +18,7 @@ const Country = ({ toggleVisited, getIsVisited }) => {
       <CountryInfoCard
         key={country.cca3}
         {...country}
+        countries={countries}
         toggleVisited={toggleVisited}
         getIsVisited={getIsVisited}
       />

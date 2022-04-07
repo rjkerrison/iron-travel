@@ -19,6 +19,14 @@ const CountryListFilterForm = ({
         <label htmlFor='europe'>Europe</label>
         <input
           type='checkbox'
+          name='asia'
+          id='asia'
+          checked={formData.asia}
+          onClick={handleCheck}
+        />
+        <label htmlFor='asia'>Asia</label>
+        <input
+          type='checkbox'
           name='northAmerica'
           id='north-america'
           checked={formData.northAmerica}

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import countries from '../../assets/countries.json'
 import CountryInfoHeaderCard from './CountryInfoHeaderCard'
 import './CountryList.css'
 import CountryListFilterForm from './CountryListFilterForm'
@@ -11,12 +10,13 @@ const matchesQuery = (continents, query) => {
       c.name.common.toLowerCase().includes(query.toLowerCase()))
 }
 
-const CountryList = ({ setTotalCountryCount }) => {
+const CountryList = ({ setTotalCountryCount, countries }) => {
   const [selectedCountries, setSelectedCountries] = useState(countries)
   // control all the state for the form ourselves in React
   // so that React can use this data, and update the form as necessary
   const [formData, setFormData] = useState({
     europe: true,
+    asia: true,
     southAmerica: false,
     northAmerica: false,
     africa: false,

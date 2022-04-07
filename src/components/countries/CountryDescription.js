@@ -2,6 +2,7 @@ import './CountryDescription.css'
 import BordersDescription from './BordersDescription'
 
 const CountryDescription = ({
+  countries,
   cca3,
   name,
   independent,
@@ -52,7 +53,7 @@ const CountryDescription = ({
         If you meet a native of {name.common}, you can call them a
         {/^[aeiou]/i.test(demonym) && 'n'} {demonym}.
       </p>
-      <BordersDescription borders={borders} />
+      <BordersDescription borders={borders} countries={countries} />
       <p>
         It would be useful for you to know how to speak{' '}
         {(languages && Object.values(languages)?.join(' or ')) || 'no language'}{' '}
