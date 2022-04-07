@@ -1,11 +1,18 @@
 import React from 'react'
+import { useSearchParams } from 'react-router-dom'
 
 const CountryInfoHeader = ({ flags, name, cca3, coatOfArms }) => {
+  const [searchParams, setSearchParams] = useSearchParams()
+
+  const noFlags = searchParams.get('noFlags') === 'true'
+
   return (
     <header className='CountryInfoHeader'>
-      <picture>
-        <img src={flags.svg} alt={name.official} />
-      </picture>
+      {!noFlags && (
+        <picture>
+          <img src={flags.svg} alt={name.official} />
+        </picture>
+      )}
       <div>
         <h3>{name.common}</h3>
         <p>{name.official}</p>

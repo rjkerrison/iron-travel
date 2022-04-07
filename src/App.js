@@ -1,3 +1,4 @@
+import { BrowserRouter as Router } from 'react-router-dom'
 import './App.css'
 import AppFooter from './components/layout/AppFooter'
 import AppHeader from './components/layout/AppHeader'
@@ -9,13 +10,15 @@ function App() {
 
   return (
     <div className='App'>
-      <AppHeader
-        className='pink'
-        appName={appName}
-        appDescription={appDescription}
-      />
-      <AppMain />
-      <AppFooter />
+      <Router>
+        <AppHeader
+          className='pink'
+          appName={appName}
+          appDescription={appDescription}
+        />
+        <AppMain />
+        <AppFooter />
+      </Router>
     </div>
   )
 }

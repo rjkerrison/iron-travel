@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Outlet } from 'react-router-dom'
 import countries from '../../assets/countries.json'
 import CountryInfoCard from './CountryInfoCard'
 import './CountryList.css'
@@ -121,7 +122,10 @@ const CountryList = ({
           <label htmlFor='antarctica'>Antarctica</label>
         </div>
       </form>
-      <div className='CountryList'>{countryInfoCards}</div>
+      <div className='CountryList'>
+        <Outlet />
+        {countryInfoCards}
+      </div>
     </section>
   )
 }
