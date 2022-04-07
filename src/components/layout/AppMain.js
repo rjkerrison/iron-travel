@@ -6,20 +6,30 @@ import CountryList from '../countries/CountryList'
 import { useState } from 'react'
 
 const AppMain = () => {
-  const [visitedCount, setVisitedCount] = useState(0)
+  const [visited, setVisited] = useState([])
   const [totalCountryCount, setTotalCountryCount] = useState(0)
 
-  const decreaseVisitedCount = () => {
-    setVisitedCount(visitedCount - 1)
+  const toggleVisited = (cca3) => {
+    const visitedIndex = visited.indexOf(cca3)
+    if (visitedIndex !== -1) {
+      setVisited([
+        visited.slice(0, visitedIndex),
+        visited.slice(visitedIndex + 1),
+      ])
+    } else {
+      setVisited([...visited, cca3])
+    }
   }
-  const increaseVisitedCount = () => {
-    setVisitedCount(visitedCount + 1)
+
+  const getIsVisited = (cca3) => {
+    const visitedIndex = visited.indexOf(cca3)
+    return visitedIndex !== -1
   }
 
   const countryList = (
     <CountryList
-      increaseVisitedCount={increaseVisitedCount}
-      decreaseVisitedCount={decreaseVisitedCount}
+      toggleVisited={toggleVisited}
+      getIsVisited={getIsVisited}
       setTotalCountryCount={setTotalCountryCount}
     />
   )
@@ -32,7 +42,7 @@ const AppMain = () => {
           path='/countries'
           element={
             <Countries
-              visitedCount={visitedCount}
+              visitedCount={visited.length}
               totalCountryCount={totalCountryCount}
             />
           }
@@ -42,8 +52,8 @@ const AppMain = () => {
             path=':cca3'
             element={
               <Country
-                increaseVisitedCount={increaseVisitedCount}
-                decreaseVisitedCount={decreaseVisitedCount}
+                toggleVisited={toggleVisited}
+                getIsVisited={getIsVisited}
               />
             }
           />

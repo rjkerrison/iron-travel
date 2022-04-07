@@ -1,12 +1,8 @@
 import './CountryDescription.css'
-import React, { useState } from 'react'
-import CountryLink from './CountryLink'
-import CountryLinkList from './CountryLinkList'
 import BordersDescription from './BordersDescription'
 
 const CountryDescription = ({
-  increaseVisitedCount,
-  decreaseVisitedCount,
+  cca3,
   name,
   independent,
   currencies,
@@ -16,19 +12,11 @@ const CountryDescription = ({
   borders,
   languages,
   population,
+  isVisited,
+  toggleVisited,
   ...otherInfo
 }) => {
-  const [isVisited, setIsVisited] = useState(false)
-
-  const toggleVisited = () => {
-    if (isVisited) {
-      setIsVisited(false)
-      decreaseVisitedCount()
-    } else {
-      setIsVisited(true)
-      increaseVisitedCount()
-    }
-  }
+  const _toggleVisited = () => toggleVisited(cca3)
 
   const currencyString = currencies
     ? Object.values(currencies)
@@ -71,7 +59,7 @@ const CountryDescription = ({
         during your visit.
       </p>
       <p>There are {population} people living there.</p>
-      <button onClick={toggleVisited} className={isVisited && 'active'}>
+      <button onClick={_toggleVisited} className={isVisited && 'active'}>
         {isVisited ? 'Visited (click to unvisit)' : 'Mark as visited'}
       </button>
     </div>

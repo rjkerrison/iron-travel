@@ -3,7 +3,7 @@ import CountryInfoCard from '../components/countries/CountryInfoCard'
 import countries from '../assets/countries.json'
 import { Link, useParams } from 'react-router-dom'
 
-const Country = ({ increaseVisitedCount, decreaseVisitedCount }) => {
+const Country = ({ toggleVisited, getIsVisited }) => {
   const params = useParams()
 
   const country = countries.find((country) => country.cca3 === params.cca3)
@@ -19,8 +19,8 @@ const Country = ({ increaseVisitedCount, decreaseVisitedCount }) => {
       <CountryInfoCard
         key={country.cca3}
         {...country}
-        increaseVisitedCount={increaseVisitedCount}
-        decreaseVisitedCount={decreaseVisitedCount}
+        toggleVisited={toggleVisited}
+        getIsVisited={getIsVisited}
       />
     </div>
   )

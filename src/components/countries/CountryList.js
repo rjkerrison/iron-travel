@@ -3,11 +3,7 @@ import countries from '../../assets/countries.json'
 import CountryInfoHeaderCard from './CountryInfoHeaderCard'
 import './CountryList.css'
 
-const CountryList = ({
-  increaseVisitedCount,
-  decreaseVisitedCount,
-  setTotalCountryCount,
-}) => {
+const CountryList = ({ setTotalCountryCount }) => {
   const [selectedCountries, setSelectedCountries] = useState(countries)
   // control all the state for the form ourselves in React
   // so that React can use this data, and update the form as necessary
@@ -21,14 +17,7 @@ const CountryList = ({
   })
 
   const countryInfoCards = selectedCountries.map((country) => {
-    return (
-      <CountryInfoHeaderCard
-        key={country.cca3}
-        {...country}
-        increaseVisitedCount={increaseVisitedCount}
-        decreaseVisitedCount={decreaseVisitedCount}
-      />
-    )
+    return <CountryInfoHeaderCard key={country.cca3} {...country} />
   })
 
   const updateFilters = () => {
