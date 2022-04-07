@@ -20,7 +20,8 @@
 
 .CountriesPage input[type='checkbox'] + label,
 .CountriesPage button,
-.CountriesPage input[type='submit'] {
+.CountriesPage input[type='submit'],
+.CountriesPage input[type='search'] {
   display: flex;
   justify-content: center;
   align-items: center;
