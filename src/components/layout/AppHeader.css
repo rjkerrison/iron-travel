@@ -28,3 +28,8 @@ header.App-header > * {
   margin: 0;
   padding: 0;
 }
+
+header.App-header nav {
+  display: flex;
+  gap: 0.5rem;
+}

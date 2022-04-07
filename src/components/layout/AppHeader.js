@@ -13,13 +13,6 @@ const AppHeader = (props) => {
         <Link className='App-link' to='/countries'>
           Countries
         </Link>
-        <a className='App-link' href='/'>
-          Homepage
-        </a>
-        &nbsp;
-        <a className='App-link' href='/countries'>
-          Countries
-        </a>
       </nav>
     </header>
   )
