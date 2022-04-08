@@ -5,6 +5,7 @@ import Country from '../../pages/Country'
 import CountryList from '../countries/CountryList'
 import { useEffect, useState } from 'react'
 import { getCountriesFromApi } from '../../api/countries'
+import FestivalsList from '../festivals/FestivalsList'
 
 const AppMain = () => {
   const [favorited, setFavorited] = useState([])
@@ -54,7 +55,12 @@ const AppMain = () => {
   return (
     <main>
       <Routes>
-        <Route path='/' element={<HomePage favorited= {favorited} setFavorited= {setFavorited} />} />
+        <Route
+          path='/'
+          element={
+            <HomePage favorited={favorited} setFavorited={setFavorited} />
+          }
+        />
         <Route
           path='/countries'
           element={
@@ -77,6 +83,10 @@ const AppMain = () => {
             }
           />
         </Route>
+        <Route
+          path='/countries/:cca3/festivals'
+          element={<FestivalsList countries={countries} />}
+        />
         <Route path='*' element={<h2>404</h2>} />
       </Routes>
     </main>
