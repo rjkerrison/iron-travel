@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import { getCountriesFromApi } from '../../api/countries'
 
 const AppMain = () => {
+  const [favorited, setFavorited] = useState([])
   const [visited, setVisited] = useState([])
   const [totalCountryCount, setTotalCountryCount] = useState(0)
   const [countries, setCountries] = useState([])
@@ -53,7 +54,7 @@ const AppMain = () => {
   return (
     <main>
       <Routes>
-        <Route path='/' element={<HomePage />} />
+        <Route path='/' element={<HomePage favorited= {favorited} setFavorited= {setFavorited} />} />
         <Route
           path='/countries'
           element={

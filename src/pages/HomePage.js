@@ -3,8 +3,9 @@ import Carousel from '../components/carousel/Carousel'
 import Counter from '../components/Counter'
 import FavouritesPlaceholderSection from '../components/favourites/FavouritesPlaceholderSection'
 import FavouritesSection from '../components/favourites/FavouritesSection'
+import FavoriteCountries from '../components/countries/FavoritedCountry'
 
-const HomePage = () => {
+const HomePage = ({favorited, setFavorited}) => {
   const [favs, setFavs] = useState([])
 
   const toggleFromList = (value) => {
@@ -27,7 +28,8 @@ const HomePage = () => {
         <Counter />
         {/* Conditional rendering */}
         {favs.length > 0 ? (
-          <FavouritesSection favs={favs} />
+          <FavouritesSection favs={favs} />,
+          <FavoriteCountries favorited={favorited} setFavorited={setFavorited}/>
         ) : (
           <FavouritesPlaceholderSection />
         )}
