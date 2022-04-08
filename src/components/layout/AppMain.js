@@ -5,6 +5,7 @@ import Country from '../../pages/Country'
 import CountryList from '../countries/CountryList'
 import { useEffect, useState } from 'react'
 import { getCountriesFromApi } from '../../api/countries'
+import Trips from '../countries/Trips'
 
 const AppMain = () => {
   const [visited, setVisited] = useState([])
@@ -76,6 +77,7 @@ const AppMain = () => {
             }
           />
         </Route>
+        <Route path='/trips' element={<Trips />}></Route>
         <Route path='*' element={<h2>404</h2>} />
       </Routes>
     </main>
