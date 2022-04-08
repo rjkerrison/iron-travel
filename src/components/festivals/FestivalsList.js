@@ -9,9 +9,11 @@ function FestivalsList({ countries }) {
 
   useEffect(() => {
     const getFestivalsFromApi = async () => {
-      const festivalsList = await axios.get(
-        `${BASE_URL}/countries/${cca3}/festivals`
-      )
+      const festivalsListFromApi = await axios.get(`${BASE_URL}/festivals`)
+
+      const festivalsList = festivalsListFromApi.data.filter((festival) => {
+        return festival.country.cca3 === cca3
+      })
       setFestivals(festivalsList)
     }
     getFestivalsFromApi()
@@ -24,25 +26,29 @@ function FestivalsList({ countries }) {
         <ul>
           {festivals.map((festival) => {
             return (
-              <li>
-                <h3>
-                  {festival.name} - {festival.city} - {festival.capacity} people
-                  !
-                </h3>
+              <li key={festival._id}>
+                <h3>{festival.name}</h3>
+                <h4>
+                  {festival.city} ({festival.country.name.common})
+                </h4>
+                <p>{festival.capacity} people will be there!</p>
                 <p>
-                  From {festival.startDate.toLocaleDateString()} to
-                  {festival.endDate.toLocaleDateString()}
+                  From {new Date(festival.startDate).toDateString()} to{' '}
+                  {new Date(festival.endDate).toDateString()}
                 </p>
                 <p>
-                  From {festival.namentryPricee}
+                  From {festival.entryPrice}
                   {
                     countries.find((country) => {
                       return country.cca3 === cca3
-                    }).currencies[0]?.code
-                  }
+                    }).currencies[0]?.symbol
+                  }{' '}
                   only
                 </p>
-                <p>Buy a ticket before {festival.bookingDeadline}</p>
+                <p>
+                  Buy a ticket before{' '}
+                  {new Date(festival.bookingDeadLine).toDateString()}
+                </p>
               </li>
             )
           })}
